@@ -36,8 +36,9 @@ app.get('/', (req, res) => {
   res.json({ message: '🚀 API Gestion de Tâches fonctionne !' });
 });
 if (require.main === module) {
-  app.listen(process.env.PORT, () => {
-    console.log(`🚀 Backend démarré sur http://localhost:${process.env.PORT}`);
+  const PORT = process.env.PORT || 10000;
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Backend démarré sur le port ${PORT}`);
   });
 }
 
